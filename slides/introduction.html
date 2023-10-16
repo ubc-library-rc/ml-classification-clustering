@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Title of page (as it will appear in search results) -->
-  <title>Building Exhibits with Omeka</title>
+  <title>Introduction to Machine Learning - Classification and Clustering Models</title>
 
   <meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -39,39 +38,383 @@
 
 	<div class="slides">
 
-    <section data-background="#002145">
-      <h3>UBC Library <br> Research Commons</h3>
-      <blockquote>A multidisciplinary hub supporting research endeavours, partnerships, and education.</blockquote>
-    </section>
+		<section>
+			<h3>Introduction to Machine Learning - Classification and Clustering Models</h3>
+			https://ubc-library-rc.github.io/ml-classification-clustering 
+			<aside class="notes">
+				<p>
+					0:05 - 0:15 About Machine Learning
+					0:15 - 0:30	About Classification and Clustering 
+					0:30 - 1:20	Hands-on with Jupyter Notebook
+					1:20 - 1:30	Wrap-up and Discussion
+				</p>
+			</aside>
+		</section>
 
-    <section data-background="#002145">
-       <p> More from the Research Commons at (UBC-V)</p>
-       <ul>
-         <li><a href="https://researchcommons.library.ubc.ca/">researchcommons.library.ubc.ca</a></li>
-         <li><a href="https://researchcommons.library.ubc.ca/events/">Upcoming events</a></li>
-         <li><a href="https://researchcommons.library.ubc.ca/oer/">Open Educational Resources (OERs)</a></li>
-       </ul>
-    </section>
+		<section style="text-align: left;">
+			<h3>Land Acknowledgement</h3>
+			<p>UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam) peoples.</p>
+			<aside class="notes">
+				<p>
+				But before going into more details I would like to begin by acknowledging that I .
+				</p>
+			</aside>
+		</section>
 
-    <section data-background="#002145">
-        <p> And  from the Center for Scholarly Communication (UBC-O)</p>
-        <ul>
-          <li><a href="https://library.ok.ubc.ca/research/csc/">library.ok.ubc.ca/research/csc/</a></li>
-          <li><a href="https://library.ok.ubc.ca/research/csc/workshops/">Upcoming events</a></li>
-          </ul>
-    </section>
 
-    <section>
+		<section>
+			Use the Zoom toolbar to engage
+			<img  data-src="../content/zoom-figures/zoom_toolbar.png" alt="The Zoom toolbar">
+			<div class="fragment">
+				<p style="font-size: smaller"><em>Participants</em> window</p>
+				<img data-src="../content/zoom-figures/participants_window_menu.png" alt="The participants menu">
+			</div>
+			<aside class="notes">
+				<p>
+				Active participation makes the session so much fun and gives me and your peers much more energy. We are
+				all sitting in our offices with little sound. Your voices and perspectives enlivens the session. We encourage
+				you to engage with each other and instructors.
 
-    </section>
+				The participants window lists everyone in the session and click the icons at the bottom to communicate with
+				the instructors.
 
-    <section>
+				You can also use the Chat windows to comment or ask questions at any time. It is also a good place to share
+				problems with your audio connection.
+				</p>
+			</aside>
+		</section>
 
-    </section>
+		<section data-background="#e6f7ff">
+			<h3>Learning Objectives</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">Understand classification and clustering models and, their applications in machine learning</li>
+				<li class="fragment fade-in-then-semi-out">Train classification and clustering models for real-world datasets</li>
+				<li class="fragment fade-in-then-semi-out">Interpret and analyze classification and clustering model results.</li>
+			</ul>
+			<aside class="notes">
+				<p>
+				So, to touch various viewpoints of machine learning classification and clustering, we have the following learning objectives for this workshop:
+				</p>
+			</aside>
+		</section>
 
-    <section>
+		<section data-background="#e6f7ff">
+			<h3>Pre-workshop setup</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">GOOGLE COLAB <a href="https://colab.research.google.com/">(https://colab.research.google.com/)</a></li>
+			</ul>
+			<aside class="notes">
+				<p>
+					For hands-on exercises, we will use [Python](https://www.python.org/) on [Jupyter Notebooks](https://jupyter.org/). You don’t need to have Python installed. Please make sure that you have a [UBC Syzygy](https://ubc.syzygy.ca/) or a [Google Colaboratory](https://colab.research.google.com/) account. (You will need a CWL login to access Syzygy.)
 
-    </section>
+					hands-on exercises, programming tools and libraries, such as [Python] and [scikit-learn] prior familiarity with Python programming is recommended, we do not study the codes in detail
+				</p>
+			</aside>
+		</section>
+
+		<section data-background="#e6f7ff">
+			<h3>What is Machine Learning?</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">“Field of study that gives computers the capability to learn without being explicitly programmed" - Arthur Samuel</li>
+			</ul>
+			<aside class="notes">
+				<p>
+					What comes to your mind when you hear of the word machine learning? 
+					
+					field of computer science, teaching computers to learn from data, without explicitly defining the rules applicable to the problem.
+
+					algorithms or mathematical models trained  large datasets to recognize pattern
+				</p>
+			</aside>
+		</section>
+
+
+		<section>
+			<h3> Replace the question mark</h3>
+			<table>
+				<tr>
+				<th> X </th>
+				<th> Y </th>
+				</tr>
+
+				<tr>
+					<td> 0.1 </td>
+					<td> A </td>
+				</tr>
+
+				<tr>
+					<td> 0.4 </td>
+					<td> A</td>
+				</tr>
+
+				<tr>
+					<td> 4.3 </td>
+					<td> B</td>
+				</tr>
+
+				<tr>
+					<td> 4.2 </td>
+					<td> B </td>
+				</tr>
+
+				<tr>
+					<td> 3.2 </td>
+					<td> ? </td>
+				</tr>
+
+			</table>
+		</section>
+
+		<section data-background="#e6f7ff">
+			<h3>Building a Machine Learning Model</h3>
+			<img height="500px" data-src="https://editor.analyticsvidhya.com/uploads/52606ML-stage.png">
+			<aside class="notes">
+				- **Data Collection:**: gathering and preparing data, he quality of the data used in the model directly impacts its accuracy and effectiveness
+				
+				- **Data Preprocessing:** cleaned, transformed, and formatted into a suitable format 
+				
+				- **Model Training:** Once the data is ready, it is used to train a machine learning model.
+				
+				- **Model Evaluation:** After the model has been trained, it needs to be evaluated to ensure that it is performing accurately. This is done using a test set of data that was not used during the training process.
+				
+				- **Model Deployment:** Once the model has been trained and evaluated, it can be deployed for use in a production environment. This involves integrating the model into a larger system and ensuring that it can handle real-world data. This step involves choosing a suitable employment platform.
+				
+				- **Model Improvement:** Machine learning is an iterative process, so the model may need to be improved over time. This can involve retraining or fine-tuning its parametersthe with new data or continues stream of data.
+			</aside>
+		</section>
+
+		<section>
+			<h3>Types of Machine Learning</h3>
+			<img height="250px" data-src="https://static.javatpoint.com/tutorial/machine-learning/images/difference-between-supervised-and-unsupervised-learning.jpg">
+			<p style="color:blue;font-size:11px;"> From javatpoint</p>
+			<h4>Some other types:</h4>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">Reinforcement Learning</li>
+				<li class="fragment fade-in-then-semi-out">Transfer Learning</li>
+			</ul>
+			<aside class="notes">
+				There are different types of machine learning, including supervised learning, unsupervised learning, and reinforcement learning, each with its own set of algorithms and techniques. 
+
+				* Supervised Learning:
+
+				an algorithm is trained on a labeled dataset, meaning that the dataset has input features (X) and corresponding output labels (Y). The goal of supervised learning is to learn a function that maps the input features to the output labels. Once the model is trained, it can be used to make predictions on new data. Examples of supervised learning tasks include image classification, speech recognition, and regression analysis.
+
+				* Unsupervised Learning:
+
+				Unsupervised learning is a type of machine learning where the algorithm is trained on an unlabeled dataset, meaning that there are no output labels (Y) associated with the input features (X). The goal of unsupervised learning is to learn patterns and structure in the data without the help of a labeled dataset. Examples of unsupervised learning tasks include clustering, anomaly detection, and dimensionality reduction.
+
+				* Reinforcement Learning:
+
+				Reinforcement learning is a type of machine learning that involves an agent interacting with an environment to learn how to make decisions that maximize a reward. The agent receives feedback from the environment in the form of rewards or penalties, and its goal is to learn a policy that maximizes the expected long-term reward. Reinforcement learning is often used in robotics, game playing, and control systems.
+			
+				* Transfer Learning:
+
+				Transfer learning refers to a technique in which a pre-trained model, typically trained on a large dataset, is used as a starting point for training a new model on a smaller dataset or a different but related task. The idea is that the knowledge learned from the pre-trained model can be transferred to the new task, allowing the new model to start with some level of knowledge or "transfer" from the previous task, which can potentially improve its performance and reduce the amount of training data required.
+			</aside>
+		</section>
+
+
+		<section data-background="#002145">
+			<h3> Methods and Algorithms</h3>
+			<aside class="notes">
+				In this section, we will provide an overview of these three machine learning algorithms, discuss their strengths and weaknesses, and provide examples of their applications. 
+			</aside>
+		</section>
+
+		<section>
+			<h3>Data Preparations</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">Types of Features (continuous/categorical) </li>
+				<li class="fragment fade-in-then-semi-out">Handling missing values</li>
+				<li class="fragment fade-in-then-semi-out">Feature scaling</li>
+				<li class="fragment fade-in-then-semi-out">Feature selection</li>
+			</ul>
+			<aside class="notes">
+				Before going to the main step, it is a good idea to learn a little bit about the steps right before and after the model training step
+				
+				Continuous vs Categorical Variables
+				Handling missing values - drop, impute, forward backward fill
+				Feature scaling: standardization, min-max scaling, Feature selection
+			</aside>
+		</section>
+
+		<section>
+			<h3>Model Evaluation</h3>
+			<img  data-src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190523171258/overfitting_2.png" alt="Overfitting Underfitting" width="800">
+			<p style="color:blue;font-size:11px;"> From geeksforgeeks</p>
+			<aside class="notes">
+				Overfitting underfitting
+				we look at the measures for model evaluation in the next section as they are specific to the type of the model
+			</aside>
+		</section>
+
+		<section>
+			<h3>Algorithms and Methods</h3>
+			<img height="400px" data-src="https://ch.mathworks.com/help/stats/machinelearning_supervisedunsupervised.png">
+			<p style="color:blue;font-size:11px;"> From mathworks</p>
+			<aside class="notes">
+			</aside>
+		</section>
+
+		<section>
+			<h3>Algorithms and Methods</h3>
+			<img height="500px" data-src="https://ch.mathworks.com/help/stats/machinelearningtypes.jpg">
+			<p style="color:blue;font-size:11px;"> From mathworks</p>
+			<aside class="notes">
+			</aside>
+		</section>
+
+		<section>
+			<h3>Python Libraries</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out"><a href="https://numpy.org/">Numpy</a></li>
+				<li class="fragment fade-in-then-semi-out"><a href="https://pandas.pydata.org/">Pandas</a></li>
+				<li class="fragment fade-in-then-semi-out"><a href="https://matplotlib.org/">Matplotlib</a></li>
+				<li class="fragment fade-in-then-semi-out"><a href="https://scikit-learn.org/stable/">Scikit-Learn</a></li>
+			</ul>
+			<aside class="notes">
+				Numpy: NumPy is a library for the Python programming language, adding support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
+				Pandas: pandas is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series.
+				Matplotlib: Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy.
+				scikit-learn is a free software machine learning library for the Python programming language. 
+			</aside>
+		</section>
+
+		<section>
+			<h3>Classification and Clustering</h3>
+			<img height="500px" data-src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*H-0Hu35Un_buwheCFlTvbA.png">
+			<p style="color:blue;font-size:11px;">From miro account on Medium</p>
+			<aside class="notes">
+			Classification uses supervised learning, where the algorithm is trained on a labeled dataset to learn the relationship between input features and output class labels. The trained model can then be used to predict the class labels of new, unseen data. Clustering uses unsupervised learning, where the algorithm groups similar data points together based on their similarity or distance from each other. The number of clusters may be predefined or learned from the data.
+			Classification metrics and algorithms
+			Clustering algorithms
+		</aside>
+		</section>
+
+		<section>
+			<h3>Limits of Machine Learning</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">Garbage In = Garbage Out</li>
+				<li class="fragment fade-in-then-semi-out">Data Limitation</li>
+				<li class="fragment fade-in-then-semi-out">Generalization and overfitting</li>
+				<li class="fragment fade-in-then-semi-out">Inability to explain answers</li>
+				<li class="fragment fade-in-then-semi-out">Ethics and Bias Limitations</li>
+				<li class="fragment fade-in-then-semi-out">Computational Limitations</li>
+			</ul>
+			<aside class="notes">
+				Some of the differentiation factors of machine learning models also count as their limits:
+				
+				* Garbage In = Garbage Out
+				In machine learning, the quality of the output model is directly dependent on the quality of the input data used to train it. If the input data is incomplete, noisy, or biased, the resulting model may be inaccurate or unreliable.
+				
+				For example, suppose a machine learning model is being developed to predict which loan applications are likely to be approved by a bank. If the training dataset only contains loan applications from a particular demographic group or geographic region, the resulting model may be biased towards that group or region and may not generalize well to other groups or regions. This could lead to discrimination and unfair lending practices.
+				
+				* Data Limitation
+				Machine learning algorithms are only as good as the data they are trained on. If the data is biased, incomplete, or noisy, the algorithm may not be able to learn the underlying patterns or may learn incorrect patterns. Also, machine learning models require large amounts of labeled data for training, which can be expensive and time-consuming to obtain.
+				
+				* Generalization and overfitting
+				Machine learning models are typically trained on a specific dataset, and their ability to generalize to new data outside of that dataset may be limited. Overfitting can occur if the model is too complex or if it is trained on a small dataset, causing it to perform well on the training data but poorly on new data. When a model is overfitting, it is essentially memorizing the training data rather than learning the underlying patterns in the data.
+				
+				* Inability to explain answers
+				Machine learning models can be complex and difficult to interpret, making it challenging to understand why they make certain predictions or decisions. This can be a problem in domains such as healthcare or finance where it is important to be able to understand the rationale behind a decision.
+				
+				* Ethics and Bias Limitations
+				Machine learning algorithms can amplify existing biases in the data they are trained on, leading to unfair or discriminatory outcomes. There is a risk of unintended consequences when using machine learning algorithms in sensitive areas such as criminal justice, hiring decisions, and loan applications. One example of bias in machine learning is in facial recognition technology. Studies have shown that facial recognition systems are less accurate in identifying people with darker skin tones and women. This bias can lead to misidentification, which can have serious consequences, such as wrongful arrest or discrimination in hiring. In the context of healthcare, machine learning algorithms can also perpetuate bias and discrimination. For example, if the algorithm is trained on biased data, it may make less accurate predictions for certain demographic groups, such as racial minorities or people with disabilities.
+				
+				* Computational Limitations
+				Machine learning algorithms can be computationally expensive and require a lot of computing power to train and run. This can be a barrier to adoption in applications where real-time or low-power processing is required. One example of computational limitations in machine learning is training deep neural networks. Deep neural networks are a type of machine learning algorithm that can learn complex patterns in data by using many layers of interconnected nodes. However, training these models can be computationally expensive, requiring significant computing power and memory.
+				
+				For example, training a state-of-the-art natural language processing model like BERT (Bidirectional Encoder Representations from Transformers) can take weeks or even months on a large cluster of GPUs. This limits the ability of smaller organizations or individuals with limited computing resources to develop or use these models.
+			</aside>
+		</section>
+
+		<section>
+			<h3>Open Jupyter Notebooks</h3>
+			<a target="_blank" href="https://colab.research.google.com/github/ubc-library-rc/intro-machine-learning/blob/main/Examples/Classification_examples.ipynb">
+				<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+			  </a>
+			<aside class="notes">
+			</aside>
+		</section>
+
+
+
+		<section>
+			<h3>Ethics</h3>
+			<img  data-src="https://ubc-library-rc.github.io/intro-machine-learning/content/images/Ethics.jpg" alt="Ethics" width="800">
+			<p style="color:blue;font-size:11px;">Image from: Lepri, Bruno, Nuria Oliver, and Alex Pentland. "Ethical machines: The human-centric use of artificial intelligence." IScience 24.3 (2021): 102249.</p>
+
+			<aside class="notes">
+				
+			</aside>
+		</section>
+
+		<section>
+			<h3>Where to go from here?</h3>
+			<ul>
+				<li class="fragment fade-in-then-semi-out">Learn math, programming, and software development: <a href="https://ubc-library-rc.github.io/">Digital Scholarship workshops at UBC Library</a></li>
+				<li class="fragment fade-in-then-semi-out">Online courses such as <a href="https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction/">Supervised Machine Learning course on Coursera</a></li>
+				<li class="fragment fade-in-then-semi-out">Youtube Tutorials such as <a href="https://www.youtube.com/watch?v=7eh4d6sabA0">Python Machine Learning Tutorial Series</a></li>
+				<li class="fragment fade-in-then-semi-out">Find similar examples in <a href="https://scikit-learn.org/stable/auto_examples/index.html">Scikit-learn documentation</a></li>
+				<li class="fragment fade-in-then-semi-out">Join communities such as <a href="https://www.kaggle.com/">Kaggle</a> or <a href="https://amscampusbase.ubc.ca/dsci/home/">AMS Data Science Club</a></li>
+			</ul>
+			<aside class="notes">
+				
+			</aside>
+		</section>
+
+		<section>
+			<h3> Future workshops </h3>
+			<table style="font-size:14px">
+				<tr>
+				<th> Title </th>
+				<th> Series 1 </th>
+				<th> Series 2</th>
+				</tr>
+
+				<tr>
+					<td> Regression models </td>
+					<td> Wed, Oct 11, 2023 (12:00pm to 2:00pm) - Done </td>
+					<td> Wed, Nov 8, 2023 (10:00am to 12:00pm) </td>
+				</tr>
+
+				<tr>
+					<td> Classification and clustering models</td>
+					<td> Tue, Oct 17, 2023 (12:00pm to 2:00pm) - Today </td>
+					<td> Wed, Nov 15, 2023 (10:00pm to 12:00pm) </td>
+				</tr>
+
+				<tr>
+					<td> Neural networks </td>
+					<td> Wed, Oct 25, 2023 (12:00 to 2:00pm) </td>
+					<td> Wed, Nov 22, 2023 (12:00pm to 2:00pm) </td>
+				</tr>
+
+
+			</table>
+
+			<p> Register <a href="https://libcal.library.ubc.ca/calendar/vancouver?t=g&q=introduction%20to%20machine%20learning&cid=7544&cal=7544&inc=0"> here</a></p>
+
+
+		</section>
+
+		<section data-background="#002145">
+			<p> More from the Research Commons at (UBC-V)</p>
+			<ul>
+			  <li><a href="https://researchcommons.library.ubc.ca/">researchcommons.library.ubc.ca</a></li>
+			  <li><a href="https://researchcommons.library.ubc.ca/events/">Upcoming events</a></li>
+			  <li><a href="https://researchcommons.library.ubc.ca/oer/">Open Educational Resources (OERs)</a></li>
+			</ul>
+		 </section>
+	 
+		 <section data-background="#002145">
+			 <p> And  from the Center for Scholarly Communication (UBC-O)</p>
+			 <ul>
+			   <li><a href="https://library.ok.ubc.ca/research/csc/">library.ok.ubc.ca/research/csc/</a></li>
+			   <li><a href="https://library.ok.ubc.ca/research/csc/workshops/">Upcoming events</a></li>
+			   </ul>
+		 </section>
+
 
 </div>
 
