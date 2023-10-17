@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Ethics
-nav_order: 10
+nav_order: 8
 ---
 # Ethics
 
