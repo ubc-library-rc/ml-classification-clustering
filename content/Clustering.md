@@ -25,7 +25,7 @@ Classification models can be evaluated using metrics such as accuracy, precision
 
 **Recall:** The proportion of true positive instances to the total number of instances that belong to the positive class.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png" alt= “Precision-vs-Recall height="300">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/800px-Precisionrecall.svg.png" alt= "Precision-vs-Recall" height="300">
 
 There are several types of classification and clustering algorithms, each with their own strengths and limitations. Here are some of the most commonly used types of classification and clustering:
 
