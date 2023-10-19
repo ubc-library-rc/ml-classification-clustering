@@ -43,6 +43,10 @@ Find the workshop slides below or <a href="slides/introduction.html" target="_bl
  </iframe>
 </div>
 
+## Other workshops in the series 
+Workshop 1- Regression: https://ubc-library-rc.github.io/ml-regression/
+Workshop 3- Neural Networks: https://ubc-library-rc.github.io/ml-neural-networks/
+
 ## Resources
 * Colab Notebook: <a target="_blank" href="https://colab.research.google.com/github/ubc-library-rc/intro-machine-learning/blob/main/Examples/Classification_examples.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
