@@ -44,7 +44,7 @@ Find the workshop slides below or <a href="slides/introduction.html" target="_bl
 </div>
 
 ## Other workshops in the series 
-Workshop 1- Regression: <a href="https://ubc-library-rc.github.io/ml-regression/"> Click here </a>
+Workshop 1- Regression: <a href="https://ubc-library-rc.github.io/ml-regression/"> Click here </a> <br>
 Workshop 3- Neural Networks: <a href="https://ubc-library-rc.github.io/ml-neural-networks/"> Click here </a>
 
 ## Resources
