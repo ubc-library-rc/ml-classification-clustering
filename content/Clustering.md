@@ -62,3 +62,5 @@ For classification and clustering exercises, open the following Jupyter Notebook
 <a target="_blank" href="https://colab.research.google.com/github/ubc-library-rc/intro-machine-learning/blob/main/Examples/Classification_examples.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
+
+
