@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Classification & Clustering
+title: DBSCAN
 nav_order: 8
 ---
 
