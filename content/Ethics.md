@@ -7,7 +7,7 @@ nav_order: 8
 
 Machine learning models have the potential to significantly impact society and raise various ethical concerns. Here are some examples of ethical concerns related to machine learning models:
 
-![Ethical Machine Learning](./images/Ethics.jpg)
+![Ethical Machine Learning](./images/human-centric-ai.jpg)
 
 Image from: Lepri, Bruno, Nuria Oliver, and Alex Pentland. "Ethical machines: The human-centric use of artificial intelligence." IScience 24.3 (2021): 102249.
 
@@ -36,5 +36,6 @@ Some examples of machine learning applications that raise ethical concerns:
 ## AI Carbon Footprint
 
 The training of AI models often requires substantial computational power and large datasets, which in turn require significant energy consumption. The deployment and operation of AI systems also contribute to their carbon footprint. AI applications that run on cloud infrastructure or data centers require ongoing power to operate, resulting in ongoing energy consumption and carbon emissions. The computations required for deep learning research have been increased by [300,000 folds](https://arxiv.org/abs/1907.10597) from 2012 to 2018. Additionally, the manufacturing and disposal of hardware components, such as AI-specific chips or servers, also contribute to the carbon footprint. [A study](https://hai.stanford.edu/news/ais-carbon-footprint-problem) found that training an off-the-shelf AI language-processing system produced around 600 Kg of emissions, about the amount produced by flying one person roundtrip between New York and San Francisco. 
+
 
 Efforts are being made to reduce the AI carbon footprint and improve its sustainability. These efforts include developing more energy-efficient algorithms and optimizing computing infrastructure to minimize energy consumption during training and operation. [CodeCarbon](https://codecarbon.io) is a software package that can be integrated into a Python codebase and estimates the amount of CO2 produced by the cloud or personal computing resources used to execute the code. Furthermore, using renewable energy sources to power data centers and adopting energy-efficient hardware designs can also help reduce the environmental impact of AI. 
