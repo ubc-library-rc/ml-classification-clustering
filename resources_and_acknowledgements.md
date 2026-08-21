@@ -16,4 +16,6 @@ nav_order: 20
 
 Site template adapted from the [just-the-docs](https://github.com/pmarsceill/just-the-docs) Jekyll template created by [Patrick Marsceil](https://github.com/pmarsceill) and available under the [MIT License](http://opensource.org/licenses/MIT).
 
+This content was developed by Digital Scholarship Team GAA Shayan Fahimi and is maintained by the UBC Library’s Digital Scholarship Team including subsequent GAAs Vedant Bahel and Kendra Oudyk. 
+
 Copyright: UBC Library Research Commons, [Creative Commons Attribution 4.0 license](https://creativecommons.org/licenses/by/4.0/)
